@@ -34,6 +34,15 @@ class LoginController extends Controller
      */
     public function __construct()
     {
+        $this->middleware('https');
         $this->middleware('guest')->except('logout');
+    }
+
+    /**
+     * @return string
+     */
+    public function username()
+    {
+        return 'username';
     }
 }
